@@ -17,6 +17,9 @@ trap 'rm -rf "$stage"' EXIT
 cp -R skills "$stage/skills"
 claude plugin validate "$stage" --strict
 
+# Project-local maintenance skills under .claude/skills/ (not shipped in the plugin).
+claude plugin validate .claude --strict
+
 # Checks the CLI does not do: folder name must match the frontmatter name,
 # so that /<name> and the README agree with what actually loads.
 status=0

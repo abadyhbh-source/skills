@@ -8,7 +8,10 @@ A collection of Claude Code skills for design engineering: animation, motion rev
 - `.claude-plugin/plugin.json` is the plugin manifest. `skills` points at `./skills`.
 - `.claude-plugin/marketplace.json` lists the plugin so users can run `/plugin marketplace add abadyhbh-source/skills`.
 - `.claude/settings.json` holds project permissions and a PostToolUse hook that re-validates after any edit to a SKILL.md or manifest.
+- `.claude/skills/` holds project-only maintenance skills (`sync-upstream`, `add-skill`, `release`). They load when working in this repo and are not shipped in the plugin.
+- `.claude/CLAUDE.md` is this file. It lives here rather than at the repo root because the plugin validator warns about a root CLAUDE.md, and Claude Code loads this location as project context all the same.
 - `scripts/validate.sh` is the single validation entry point. CI runs it on every push and pull request.
+- `scripts/sync-upstream.sh` adds the upstream remote if missing, fetches, and with `--merge` merges and validates.
 
 ## Working on a skill
 
@@ -34,12 +37,11 @@ Bump `version` in both `.claude-plugin/plugin.json` and the plugin entry in `.cl
 
 ## Keeping up with upstream
 
-This fork has no `upstream` remote configured. To pull Emil Kowalski's new skills:
+Upstream is https://github.com/emilkowalski/skills and owns everything under `skills/`. Run `/sync-upstream` or:
 
 ```bash
-git remote add upstream https://github.com/emilkowalski/skills
-git fetch upstream
-git merge upstream/main
+./scripts/sync-upstream.sh          # fetch and report what is new
+./scripts/sync-upstream.sh --merge  # merge, drop upstream junk, validate
 ```
 
-Then run `./scripts/validate.sh` and bump the version.
+Then bump the version. Keep fork-specific edits to a skill in their own commit so the next merge stays clean.

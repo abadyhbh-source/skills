@@ -22,6 +22,15 @@ You can stay up to date with my skills here:
 
 ## Install
 
+As a Claude Code plugin, from this repository:
+
+```
+/plugin marketplace add abadyhbh-source/skills
+/plugin install design-eng@abadyhbh-skills
+```
+
+Or with the skills CLI, which installs the upstream copy from emilkowalski/skills:
+
 ```bash
 npx skills@latest add emilkowalski/skills
 ```

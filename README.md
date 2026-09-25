@@ -47,6 +47,10 @@ Emil's skills, shipped unchanged under `skills/`:
 
 Also from upstream: [performance-cheatsheet.md](./performance-cheatsheet.md), a one-table list of animation performance problems and their fixes.
 
+From other authors, vendored with their licenses:
+
+- **[grill-me-codex](./skills/grill-me-codex/SKILL.md)**: Chase AI's two-act plan hardening from [chaseai-yt/claudex-loop](https://github.com/chaseai-yt/claudex-loop) (legacy version). First Claude grills me about a plan. Then OpenAI Codex reviews the plan read-only until it approves. Needs the `codex` CLI installed and logged in. Invoke-only.
+
 ## Maintaining the fork
 
 Project skills under `.claude/skills/` load automatically when working in this repo:

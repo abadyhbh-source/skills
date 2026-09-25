@@ -1,6 +1,7 @@
 ---
 name: codex-build
 description: "Have Codex implement a concrete work order and have Claude independently inspect the final changes. Preserves the explicit Codex builder choice; use claudex-loop for host-based planning and automatic reviewer selection."
+disable-model-invocation: true
 ---
 
 # Codex Build

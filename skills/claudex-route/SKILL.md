@@ -1,6 +1,7 @@
 ---
 name: claudex-route
 description: "Recommend a model and a scoped handoff for a task in Claude Code or Codex. Use when choosing who should handle a task, seeking a second opinion, getting unstuck, or delegating focused work; execute one handoff when requested."
+disable-model-invocation: true
 ---
 
 # Claudex Route

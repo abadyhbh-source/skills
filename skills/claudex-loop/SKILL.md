@@ -1,6 +1,7 @@
 ---
 name: claudex-loop
 description: "Harden a plan with independent Claude/Codex review, then optionally build and cross-inspect it. Start in either Claude Code or Codex: the host plans and the other provider reviews. Use for claudex this plan, claudex-loop, or the legacy crucible trigger; not for trivial edits."
+disable-model-invocation: true
 ---
 
 # Claudex Loop

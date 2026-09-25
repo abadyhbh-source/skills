@@ -11,8 +11,8 @@
     {
       "name": "design-eng",
       "source": "./",
-      "description": "Animation, motion review, Apple-style design, UI library picks, prototyping, Sonner, and Swift skills.",
-      "version": "1.1.0",
+      "description": "Animation, motion review, Apple-style design, UI library picks, prototyping, Sonner, and Swift skills, plus Claude + Codex plan review and build loops.",
+      "version": "1.2.0",
       "category": "design"
     }
   ]

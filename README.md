@@ -47,6 +47,13 @@ Emil's skills, shipped unchanged under `skills/`:
 
 Also from upstream: [performance-cheatsheet.md](./performance-cheatsheet.md), a one-table list of animation performance problems and their fixes.
 
+From Chase AI's [claudex-loop](https://github.com/chaseai-yt/claudex-loop) (MIT). These skills make Claude and OpenAI Codex work together. They need the `claude` and `codex` CLIs installed and logged in, plus Python 3.10+, and all of them are invoke-only:
+
+- **[claudex-loop](./skills/claudex-loop/SKILL.md)**: The full loop. Claude settles requirements and writes a plan, then Codex reviews the plan read-only until it approves. One of them builds, and the other inspects the finished code. Holds the shared runner the next two use.
+- **[claudex-route](./skills/claudex-route/SKILL.md)**: Recommends whether a task should stay with the current model or go to the other one, and runs one handoff when asked.
+- **[codex-review](./skills/codex-review/SKILL.md)**: Codex review of an existing plan only. Needs `claudex-loop`.
+- **[codex-build](./skills/codex-build/SKILL.md)**: Codex implements a spec and Claude inspects the result. Needs `claudex-loop`.
+
 ## Maintaining the fork
 
 Project skills under `.claude/skills/` load automatically when working in this repo:
